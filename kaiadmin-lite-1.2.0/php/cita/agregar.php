@@ -425,6 +425,7 @@
                                                     }
                                                 }
                                             </script>
+                                            <?php $conn->close(); ?>
                                         </div>
                                     </div>
                                 </div>

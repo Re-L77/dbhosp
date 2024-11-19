@@ -155,17 +155,17 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=".../cita/agregar.php">
+                                        <a href="../cita/agregar.php">
                                             <span class="sub-item">Agregar Cita</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=".../cita/eliminar.php">
+                                        <a href="../cita/eliminar.php">
                                             <span class="sub-item">Eliminar Cita</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href=".../cita/editar.php">
+                                        <a href="../cita/editar.php">
                                             <span class="sub-item">Editar Cita</span>
                                         </a>
                                     </li>

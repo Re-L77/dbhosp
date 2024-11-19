@@ -172,7 +172,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a data-bs-toggle="collapse" href="#historial" aria-expanded="false"
                                 aria-controls="historial">
                                 <i class="fas fa-notes-medical"></i>
@@ -182,29 +182,29 @@
                             <div class="collapse" id="historial" data-bs-parent="#accordionSidebar">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="../historial/lista.php">
+                                        <a href="./lista.php">
                                             <span class="sub-item">Lista de Historiales</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="../historial/agregar.php">
+                                        <a href="./agregar.php">
                                             <span class="sub-item">Agregar Historial</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="../historial/eliminar.php">
+                                        <a href="./eliminar.php">
                                             <span class="sub-item">Eliminar Historial</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="../historial/editar.php">
+                                        <a href="./editar.php">
                                             <span class="sub-item">Editar Historial</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a data-bs-toggle="collapse" href="#receta" aria-expanded="false" aria-controls="receta">
                                 <i class="fas fa-prescription-bottle-alt"></i>
                                 <p>Recetas</p>
@@ -213,22 +213,22 @@
                             <div class="collapse" id="receta" data-bs-parent="#accordionSidebar">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="./lista.php">
+                                        <a href="../receta/lista.php">
                                             <span class="sub-item">Lista de Recetas</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="./agregar.php">
+                                        <a href="../receta/agregar.php">
                                             <span class="sub-item">Agregar Receta</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="./eliminar.php">
+                                        <a href="../receta/eliminar.php">
                                             <span class="sub-item">Eliminar Receta</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="./editar.php">
+                                        <a href="../receta/editar.php">
                                             <span class="sub-item">Editar Receta</span>
                                         </a>
                                     </li>
@@ -370,48 +370,12 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">RECETAS - CONSULTA</h4>
+                                    <h4 class="card-title">HISTORIAL - CONSULTA</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
-                                        <?php
-
-                                        include "../conex.php";
-                                        $sql = "SELECT * FROM receta";
-                                        $result = $conn->query($sql);
-                                        ?>
                                         <div class="col-md-12">
-                                            <div class="table-responsive">
-                                                <table class="table table-bordered">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>#</th>
-                                                            <th>Id_historial</th>
-                                                            <th>Medicamento</th>
-                                                            <th>Instrucciones</th>
-                                                            <th>Dosis</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <?php
-                                                        if ($result->num_rows > 0) {
-                                                            while ($row = $result->fetch_assoc()) {
-                                                                echo "<tr>";
-                                                                echo "<th scope='row'>" . $row["id_receta"] . "</th>";
-                                                                echo "<td>" . $row["id_historial"] . "</td>";
-                                                                echo "<td>" . $row["medicamento"] . "</td>";
-                                                                echo "<td>" . $row["instrucciones"] . "</td>";
-                                                                echo "<td>" . $row["dosis"] . "</td>";
-                                                                echo "</tr>";
-                                                            }
-                                                        } else {
-                                                            echo "<tr><td colspan='8'>No hay citas registradas</td></tr>";
-                                                        }
-                                                        $conn->close();
-                                                        ?>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

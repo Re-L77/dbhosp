@@ -172,7 +172,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a data-bs-toggle="collapse" href="#historial" aria-expanded="false"
                                 aria-controls="historial">
                                 <i class="fas fa-notes-medical"></i>
@@ -182,29 +182,29 @@
                             <div class="collapse" id="historial" data-bs-parent="#accordionSidebar">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="./lista.php">
+                                        <a href="../historial/lista.php">
                                             <span class="sub-item">Lista de Historiales</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="./agregar.php">
+                                        <a href="../historial/agregar.php">
                                             <span class="sub-item">Agregar Historial</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="./eliminar.php">
+                                        <a href="../historial/eliminar.php">
                                             <span class="sub-item">Eliminar Historial</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="./editar.php">
+                                        <a href="../historial/editar.php">
                                             <span class="sub-item">Editar Historial</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a data-bs-toggle="collapse" href="#receta" aria-expanded="false" aria-controls="receta">
                                 <i class="fas fa-prescription-bottle-alt"></i>
                                 <p>Recetas</p>
@@ -213,22 +213,22 @@
                             <div class="collapse" id="receta" data-bs-parent="#accordionSidebar">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="../receta/lista.php">
+                                        <a href="./lista.php">
                                             <span class="sub-item">Lista de Recetas</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="../receta/agregar.php">
+                                        <a href="./agregar.php">
                                             <span class="sub-item">Agregar Receta</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="../receta/eliminar.php">
+                                        <a href="./eliminar.php">
                                             <span class="sub-item">Eliminar Receta</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="../receta/editar.php">
+                                        <a href="./editar.php">
                                             <span class="sub-item">Editar Receta</span>
                                         </a>
                                     </li>
@@ -370,48 +370,48 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">HISTORIAL - ALTA</h4>
+                                    <h4 class="card-title">RECETAS - ALTA</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <?php
                                         include "../conex.php";
-                                        $query = "SELECT id_paciente FROM paciente";
+                                        $query = "SELECT id_historial FROM historial";
                                         $result = mysqli_query($conn, $query);
                                         ?>
                                         <div class="col-md-12">
                                             <form action="./alta.php" method="post" onsubmit="return validateForm()">
                                                 <div class="form-group">
-                                                    <label for="id_paciente">ID Paciente</label>
-                                                    <select class="form-select" id="id_paciente" name="id_paciente"
+                                                    <label for="id_historial">ID Historial</label>
+                                                    <select class="form-select" id="id_historial" name="id_historial"
                                                         required>
                                                         <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                                                            <option value="<?php echo $row['id_paciente']; ?>">
-                                                                <?php echo $row['id_paciente']; ?>
+                                                            <option value="<?php echo $row['id_historial']; ?>">
+                                                                <?php echo $row['id_historial']; ?>
                                                             </option>
                                                         <?php } ?>
                                                     </select>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="fecha_hist">Fecha del Historial</label>
-                                                    <input type="date" class="form-control" id="fecha_hist"
-                                                        name="fecha_hist" required>
+                                                    <label for="medicamento">Medicamento</label>
+                                                    <input type="text" class="form-control" id="medicamento"
+                                                        name="medicamento" required>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="diagnostico">Diagnóstico</label>
-                                                    <input type="text" class="form-control" id="diagnostico"
-                                                        name="diagnostico" required>
+                                                    <label for="instrucciones">Instrucciones</label>
+                                                    <input type="text" class="form-control" id="instrucciones"
+                                                        name="instrucciones" required>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="tratamiento">Tratamiento</label>
-                                                    <input type="text" class="form-control" id="tratamiento"
-                                                        name="tratamiento" required>
+                                                    <label for="dosis">Dosis</label>
+                                                    <input type="text" class="form-control" id="dosis" name="dosis"
+                                                        required>
                                                 </div>
 
-                                                <button type="submit" class="btn btn-primary">Agregar Historial</button>
+                                                <button type="submit" class="btn btn-primary">Agregar Receta</button>
                                             </form>
 
                                             <script>

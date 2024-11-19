@@ -413,7 +413,7 @@
                                                     <input type="datetime-local" class="form-control" id="fecha_hora"
                                                         name="fecha_hora" required>
                                                 </div>
-                                                <button type="submit" class="btn btn-primary">Agregar Paciente</button>
+                                                <button type="submit" class="btn btn-primary">Agregar Cita</button>
                                             </form>
 
                                             <script>

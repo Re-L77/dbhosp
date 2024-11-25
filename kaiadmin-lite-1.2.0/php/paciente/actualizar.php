@@ -52,6 +52,7 @@ $conn->close();
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../assets/css/plugins.min.css" />
     <link rel="stylesheet" href="../../assets/css/kaiadmin.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="../../assets/css/demo.css" />
@@ -396,76 +397,128 @@ $conn->close();
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
-                                        <form action="./modificar.php" method="post" onsubmit="return validateForm()">
+                                        <form class="needs-validation" action="./modificar.php" method="post" novalidate
+                                            onsubmit="return validateForm()">
+                                            <!-- Formulario para actualizar los datos del paciente -->
                                             <div class="form-group" style="display: none;">
-                                                <input type="text" class="form-control" id="id_paciente"
-                                                    name="id_paciente" value="<?php echo $row['id_paciente']; ?>">
-
+                                                <!-- Campo oculto para el ID del paciente -->
                                                 <input type="text" class="form-control" id="id_paciente"
                                                     name="id_paciente" value="<?php echo $row['id_paciente']; ?>">
                                             </div>
                                             <div class="form-group">
+                                                <!-- Campo para el nombre del paciente -->
                                                 <label for="nombre_pac">Nombre</label>
                                                 <input type="text" class="form-control" id="nombre_pac"
                                                     name="nombre_pac" value="<?php echo $row['nombre_pac']; ?>"
                                                     required>
+                                                <div class="valid-feedback">¡Correcto!</div>
+                                                <div class="invalid-feedback">Por favor, ingrese un nombre válido.</div>
                                             </div>
                                             <div class="form-group">
+                                                <!-- Campo para el apellido paterno del paciente -->
                                                 <label for="ap_paterno_pac">Apellido Paterno</label>
                                                 <input type="text" class="form-control" id="ap_paterno_pac"
                                                     name="ap_paterno_pac" value="<?php echo $row['ap_paterno_pac']; ?>"
                                                     required>
+                                                <div class="valid-feedback">¡Correcto!</div>
+                                                <div class="invalid-feedback">Por favor, ingrese un apellido paterno
+                                                    válido.</div>
                                             </div>
                                             <div class="form-group">
+                                                <!-- Campo para el apellido materno del paciente -->
                                                 <label for="ap_materno_pac">Apellido Materno</label>
                                                 <input type="text" class="form-control" id="ap_materno_pac"
                                                     name="ap_materno_pac" value="<?php echo $row['ap_materno_pac']; ?>"
                                                     required>
+                                                <div class="valid-feedback">¡Correcto!</div>
+                                                <div class="invalid-feedback">Por favor, ingrese un apellido materno
+                                                    válido.</div>
                                             </div>
                                             <div class="form-group">
+                                                <!-- Campo para la fecha de nacimiento del paciente -->
                                                 <label for="fecha_nac">Fecha de Nacimiento</label>
                                                 <input type="date" class="form-control" id="fecha_nac" name="fecha_nac"
                                                     value="<?php echo $row['fecha_nac']; ?>" required>
+                                                <div class="valid-feedback">¡Correcto!</div>
+                                                <div class="invalid-feedback">Por favor, ingrese una fecha válida.</div>
                                             </div>
                                             <div class="form-group">
+                                                <!-- Campo para el teléfono del paciente -->
                                                 <label for="telefono_pac">Teléfono</label>
-                                                <input type="text" class="form-control" id="telefono_pac"
+                                                <input type="tel" class="form-control" id="telefono_pac"
                                                     name="telefono_pac" value="<?php echo $row['telefono_pac']; ?>"
-                                                    required>
+                                                    pattern="[0-9]{10}" required>
+                                                <div class="valid-feedback">¡Correcto!</div>
+                                                <div class="invalid-feedback">Por favor, ingrese un teléfono válido de
+                                                    10 dígitos.</div>
                                             </div>
                                             <div class="form-group">
+                                                <!-- Campo para la calle del paciente -->
                                                 <label for="calle_pac">Calle</label>
                                                 <input type="text" class="form-control" id="calle_pac" name="calle_pac"
                                                     value="<?php echo $row['calle_pac']; ?>" required>
+                                                <div class="valid-feedback">¡Correcto!</div>
+                                                <div class="invalid-feedback">Por favor, ingrese una calle válida.</div>
                                             </div>
                                             <div class="form-group">
+                                                <!-- Campo para el número de la calle del paciente -->
                                                 <label for="numero_calle_pac">Número</label>
-                                                <input type="text" class="form-control" id="numero_calle_pac"
-                                                    name="numero_calle_pac"
+                                                <input type="number" min="1" max="999" class="form-control"
+                                                    id="numero_calle_pac" name="numero_calle_pac"
                                                     value="<?php echo $row['numero_calle_pac']; ?>" required>
+                                                <div class="valid-feedback">¡Correcto!</div>
+                                                <div class="invalid-feedback">Por favor, ingrese un número válido.</div>
                                             </div>
                                             <div class="form-group">
+                                                <!-- Campo para la colonia del paciente -->
                                                 <label for="colonia_pac">Colonia</label>
                                                 <input type="text" class="form-control" id="colonia_pac"
                                                     name="colonia_pac" value="<?php echo $row['colonia_pac']; ?>"
                                                     required>
+                                                <div class="valid-feedback">¡Correcto!</div>
+                                                <div class="invalid-feedback">Por favor, ingrese una colonia válida.
+                                                </div>
                                             </div>
                                             <div class="form-group">
+                                                <!-- Campo para el municipio del paciente -->
                                                 <label for="municipio_pac">Municipio</label>
                                                 <input type="text" class="form-control" id="municipio_pac"
                                                     name="municipio_pac" value="<?php echo $row['municipio_pac']; ?>"
                                                     required>
+                                                <div class="valid-feedback">¡Correcto!</div>
+                                                <div class="invalid-feedback">Por favor, ingrese un municipio válido.
+                                                </div>
                                             </div>
                                             <div class="form-group">
+                                                <!-- Campo para el estado del paciente -->
                                                 <label for="estado_pac">Estado</label>
                                                 <input type="text" class="form-control" id="estado_pac"
                                                     name="estado_pac" value="<?php echo $row['estado_pac']; ?>"
                                                     required>
+                                                <div class="valid-feedback">¡Correcto!</div>
+                                                <div class="invalid-feedback">Por favor, ingrese un estado válido.</div>
                                             </div>
+                                            <!-- Botón para enviar el formulario -->
                                             <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                                         </form>
 
                                         <script>
+                                            (function () {
+                                                'use strict';
+                                                window.addEventListener('load', function () {
+                                                    var forms = document.getElementsByClassName('needs-validation');
+                                                    var validation = Array.prototype.filter.call(forms, function (form) {
+                                                        form.addEventListener('submit', function (event) {
+                                                            if (form.checkValidity() === false) {
+                                                                event.preventDefault();
+                                                                event.stopPropagation();
+                                                            }
+                                                            form.classList.add('was-validated');
+                                                        }, false);
+                                                    });
+                                                }, false);
+                                            })();
+
                                             function validateForm() {
                                                 if (confirm("¿Estás seguro de que deseas enviar este formulario?")) {
                                                     return true;
@@ -474,6 +527,7 @@ $conn->close();
                                                 }
                                             }
                                         </script>
+
                                     </div>
                                 </div>
                             </div>
@@ -498,6 +552,14 @@ $conn->close();
                                     <a class="nav-link"
                                         href="https://www.instagram.com/paulitomn/profilecard/?igsh=c3Ixd3BrZGx5Y3Ay">
                                         <i class="fab fa-instagram"></i> Instagram
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <!-- Elemento de la lista de navegación -->
+                                    <a class="nav-link" href="https://www.tiktok.com/@chuchotrejo0?_t=8rgCjfAxzYW&_r=1">
+                                        <!-- Enlace a la página de TikTok -->
+                                        <i class="fa-brands fa-tiktok"></i> Tik Tok
+                                        <!-- Icono de TikTok y texto -->
                                     </a>
                                 </li>
                             </ul>
